@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite3" duration-ms="94391" started-at="2015-03-12T13:58:08Z" finished-at="2015-03-12T13:59:42Z">
+    <groups>
+      <group name="group-one">
+        <method signature="Sample1.testMethodOne()[pri:0, instance:Pack.Sample1@9c9116]" name="testMethodOne" class="Pack.Sample1"/>
+        <method signature="Sample1.testMethodTwo()[pri:0, instance:Pack.Sample1@9c9116]" name="testMethodTwo" class="Pack.Sample1"/>
+        <method signature="Sample1.testMethodOne()[pri:0, instance:Pack.Sample1@1f03bb1]" name="testMethodOne" class="Pack.Sample1"/>
+      </group> <!-- group-one -->
+      <group name="group-two">
+        <method signature="Sample1.testMethodOne()[pri:0, instance:Pack.Sample1@9c9116]" name="testMethodOne" class="Pack.Sample1"/>
+        <method signature="Sample1.testMethodOne()[pri:0, instance:Pack.Sample1@1f03bb1]" name="testMethodOne" class="Pack.Sample1"/>
+        <method signature="Sample1.testMethodThree()[pri:0, instance:Pack.Sample1@1f03bb1]" name="testMethodThree" class="Pack.Sample1"/>
+      </group> <!-- group-two -->
+    </groups>
+    <test name="Pack 1" duration-ms="38" started-at="2015-03-12T13:58:08Z" finished-at="2015-03-12T13:58:08Z">
+      <class name="Pack.Sample1">
+        <test-method status="PASS" signature="testMethodOne()[pri:0, instance:Pack.Sample1@9c9116]" name="testMethodOne" duration-ms="16" started-at="2015-03-12T19:28:08Z" finished-at="2015-03-12T19:28:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethodOne -->
+        <test-method status="PASS" signature="testMethodTwo()[pri:0, instance:Pack.Sample1@9c9116]" name="testMethodTwo" duration-ms="1" started-at="2015-03-12T19:28:08Z" finished-at="2015-03-12T19:28:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethodTwo -->
+      </class> <!-- Pack.Sample1 -->
+    </test> <!-- Pack 1 -->
+    <test name="Group Test two" duration-ms="5" started-at="2015-03-12T13:58:09Z" finished-at="2015-03-12T13:58:09Z">
+      <class name="Pack.Sample1">
+        <test-method status="PASS" signature="testMethodOne()[pri:0, instance:Pack.Sample1@1f03bb1]" name="testMethodOne" duration-ms="1" started-at="2015-03-12T19:28:09Z" finished-at="2015-03-12T19:28:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethodOne -->
+        <test-method status="PASS" signature="testMethodThree()[pri:0, instance:Pack.Sample1@1f03bb1]" name="testMethodThree" duration-ms="1" started-at="2015-03-12T19:28:09Z" finished-at="2015-03-12T19:28:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMethodThree -->
+      </class> <!-- Pack.Sample1 -->
+    </test> <!-- Group Test two -->
+    <test name="second class" duration-ms="92485" started-at="2015-03-12T13:58:09Z" finished-at="2015-03-12T13:59:42Z">
+      <class name="Pack.NewTest">
+        <test-method status="PASS" signature="f1()[pri:0, instance:Pack.NewTest@1d4e2ba]" name="f1" is-config="true" duration-ms="83748" started-at="2015-03-12T19:28:09Z" finished-at="2015-03-12T19:29:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f1 -->
+        <test-method status="PASS" signature="f()[pri:0, instance:Pack.NewTest@1d4e2ba]" name="f" duration-ms="8733" started-at="2015-03-12T19:29:33Z" finished-at="2015-03-12T19:29:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+      </class> <!-- Pack.NewTest -->
+    </test> <!-- second class -->
+  </suite> <!-- Suite3 -->
+</testng-results>

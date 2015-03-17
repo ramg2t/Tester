@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="N1">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="N1.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="../../selenium-java-2.42.2/testng-6.8.5.jar/testng-6.8.5.jar"/>
+        <pathelement location="../../selenium-java-2.42.2/apache-ant-1.8.2.jar"/>
+        <pathelement location="../../selenium-java-2.42.2/selenium-server-standalone-2.45.0.jar"/>
+        <pathelement location="../../selenium-java-2.42.2/testng-xslt-1.1.2-master/testng-xslt-1.1.2-master/lib/saxon-8.7.jar"/>
+        <pathelement location="../../selenium-java-2.42.2/testng-xslt-1.1.2-master/testng-xslt-1.1.2-master/lib/SaxonLiaison.jar"/>
+    </path>
+              	<property environment="env"/>
+              	    <property name="ws.home" value="${basedir}"/>
+              	          <property name="ws.jars" value="D:\workspace\N1\xslt"/>
+              	    <property name="test.dest" value="${ws.home}/build"/>
+              	    <property name="test.src" value="${ws.home}/src"/>
+              	          <property name="ng.result" value="test-output"/>
+              	    
+              	    <!--target name="start-selenium-server">
+              	        <java jar="${ws.home}/lib/selenium-server.jar"/>
+              	    </target-->
+
+              	    <target name="setClassPath" unless="test.classpath">
+              	        <path id="classpath_jars">
+              	            <fileset dir="${ws.jars}" includes="*.jar"/>
+              	        </path>
+              	        <pathconvert pathsep=":" 
+              	            property="test.classpath" 
+              	            refid="classpath_jars"/>
+              	    </target>
+
+              	    <target name="init" depends="setClassPath">
+              	        <tstamp>
+              	            <format property="start.time" pattern="MM/dd/yyyy hh:mm aa" />
+              	        </tstamp>
+              	        <condition property="ANT" 
+              	            value="${env.ANT_HOME}/bin/ant.bat" 
+              	            else="${env.ANT_HOME}/bin/ant">
+              	            <os family="windows" />
+              	        </condition>
+              	        <taskdef resource="testngtasks" classpath="${libs}/testng-6.8.5.jar"/>
+              	    
+              	    </target>
+              	  
+              	    <!-- all -->
+              	    <target name="all">
+              	    </target>
+
+              	    <!-- clean -->
+              	    <target name="clean">
+              	        <delete dir="${test.dest}"/>
+              	    </target>
+
+              	    <!-- compile -->
+              	    <target name="compile" depends="init, clean" > 
+              	                   <delete includeemptydirs="true" quiet="true">
+              	            <fileset dir="${test.dest}" includes="**/*"/>
+              	                   </delete>
+              	        <echo message="making directory..."/>
+              	                   <mkdir dir="${test.dest}"/>
+              	        <echo message="classpath------: ${test.classpath}"/>
+              	        <echo message="compiling..."/>
+              	        <javac 
+              	            debug="true" 
+              	            destdir="${test.dest}" 
+              	            srcdir="${test.src}" 
+              	            target="1.5" 
+              	            classpath="${test.classpath}"
+              	        >
+              	        </javac>
+              	      </target>
+
+              	    <!-- build -->
+              	    <target name="build" depends="init">
+              	    </target>
+
+              	    <!-- run -->
+              	    <target name="run" depends="compile">
+              	<testng classpath="${test.classpath}:${test.dest}" suitename="sivaprasad"> 
+              	            <xmlfileset dir="${ws.home}" includes="testng.xml"/>
+              	        </testng>
+              	        <!--
+              	        <testng classpath="${test.classpath}:${test.dest}" groups="fast">
+              	            <classfileset dir="${test.dest}" includes="example1/*.class"/>
+              	        </testng>
+              	        -->
+              	    </target>
+
+              	    <target name="usage">
+              	        <echo>
+              	            ant run will execute the test
+              	        </echo>
+              	    </target>
+
+              	          <path id="test.c">
+              	                  <fileset dir="${ws.jars}" includes="*.jar"/>
+              	          </path>
+              	         
+              	            <target name="makexsltreports">
+              	                  <mkdir dir="${ws.home}/XSLT_Reports/output"/>
+              	            	
+              	       <xslt in="${ng.result}/testng-results.xml" style="New/xslt/testng-results.xsl"
+              	                       out="${ws.home}/XSLT_Reports/output/index.html"                classpathref="test.c" processor="SaxonLiaison">
+              	                      <param name="testNgXslt.outputDir" expression="${ws.home}/XSLT_Reports/output/"/>
+              	       <param name="testNgXslt.showRuntimeTotals" expression="true"/>
+              	                  </xslt>
+              	              </target>
+</project>

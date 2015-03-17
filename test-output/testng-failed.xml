@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite3]">
+  <test name="Group Test two(failed)">
+    <groups>
+      <run>
+        <include name="group-two"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="Pack.Sample1">
+        <methods>
+          <include name="testMethodThree"/>
+        </methods>
+      </class> <!-- Pack.Sample1 -->
+    </classes>
+  </test> <!-- Group Test two(failed) -->
+</suite> <!-- Failed suite [Suite3] -->
