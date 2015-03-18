@@ -1,2 +1,6 @@
 git add .
 git commit -m 'Updating git.properties'
+
+git add *
+git commit -m 'Updating git.properties'
+git push origin master
